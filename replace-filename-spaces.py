@@ -2,14 +2,13 @@
 import os
 import glob
 
-# renames filenames to spaces
+# converts spaces to underscores in filenames only 
 #    ignores directories
 #    tests for existing file with same name and throws error
 
 # get current working directory && get cwd contents, returns list
 cwd = os.getcwd()
 dir_contents = os.listdir(cwd)
-
 
 filelist = []
 files_with_spaces = []
