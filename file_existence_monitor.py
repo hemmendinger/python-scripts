@@ -44,7 +44,7 @@ def initial_check(watchfile, cwd):
 
 def monitor(watchfile, cwd, soundfile, soundplay):
     while True:
-        if file_check(file, cwd):
+        if file_check(watchfile, cwd):
             sleep(2)
         else:
             play_sound(soundfile, soundplay)
@@ -57,5 +57,5 @@ if __name__ == '__main__':
     soundplay = int(sys.argv[2])
     cwd = os.getcwd()
     soundfile = "/usr/share/sounds/KDE-K3B-Finish-Success.ogg"
-    initial_check(file, cwd)
-    monitor(file, cwd, soundfile, soundplay)
+    initial_check(watchfile, cwd)
+    monitor(watchfile, cwd, soundfile, soundplay)
