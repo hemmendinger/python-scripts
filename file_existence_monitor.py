@@ -15,7 +15,7 @@ If used as import, initial_check and monitor functions utilize sys.exit().
 """
 
 import os
-import pygame
+from pygame import mixer
 import sys
 from time import sleep
 
@@ -29,11 +29,11 @@ def file_check(watchfile, cwd):
 
 def play_sound(soundfile, soundplay):
     if soundplay:
-        pygame.mixer.init()
+        mixer.init()
         for x in range(soundplay):
-            sound = pygame.mixer.Sound(soundfile)
+            sound = mixer.Sound(soundfile)
             sound.play()
-            while pygame.mixer.get_busy():
+            while mixer.get_busy():
                 sleep(0.5)
 
 
