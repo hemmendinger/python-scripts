@@ -1,4 +1,4 @@
-'''
+"""
 Notify if files in a directory have changed, but only by file names.
 
 Usage:
@@ -9,7 +9,7 @@ Want to be notified when a file finishes downloading in Chrome
 without specifying a file. Chrome creates a temporary download file
 and renames it when the download completes.
 
-'''
+"""
 
 import os
 import pygame
