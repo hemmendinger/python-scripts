@@ -43,7 +43,7 @@ def initial_check(file, cwd):
     else:
         exists = True
 
-def monitor(file, cwd):
+def monitor(file, cwd, soundfile, soundplay):
     while True:
         if file_check(file, cwd):
             sleep(2)
