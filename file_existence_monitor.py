@@ -39,7 +39,7 @@ def initial_check(watchfile, cwd):
         print("Terminating: File not found.")
         sys.exit()
     else:
-        exists = True
+        pass
 
 
 def monitor(watchfile, cwd, soundfile, soundplay):
