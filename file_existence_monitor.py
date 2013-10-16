@@ -53,6 +53,5 @@ def monitor(file, cwd):
             sys.exit()
 
 if __name__ == '__main__':
-#    play_sound(soundfile, soundplay)
     initial_check(file, cwd)
     monitor(file, cwd)
