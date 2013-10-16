@@ -9,6 +9,9 @@ Want to be notified when a file finishes downloading in Chrome
 without specifying a file. Chrome creates a temporary download file
 and renames it when the download completes.
 
+Warning:
+If used as import, initial_check and monitor functions utilize sys.exit().
+
 """
 
 import os
