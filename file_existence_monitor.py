@@ -48,7 +48,7 @@ def monitor(watchfile, cwd, soundfile, soundplay):
             sleep(2)
         else:
             play_sound(soundfile, soundplay)
-            print("File no longer found: " + file)
+            print("File no longer found: " + watchfile)
             sys.exit()
 
 
