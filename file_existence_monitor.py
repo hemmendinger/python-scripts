@@ -54,4 +54,4 @@ def monitor(file, cwd, soundfile, soundplay):
 
 if __name__ == '__main__':
     initial_check(file, cwd)
-    monitor(file, cwd)
+    monitor(file, cwd, soundfile, soundplay)
