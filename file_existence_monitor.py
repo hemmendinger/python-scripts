@@ -35,7 +35,7 @@ def play_sound(soundfile, soundplay):
 
 
 def initial_check(watchfile, cwd):
-    if file_check(watchfile, cwd) == False:
+    if not file_check(watchfile, cwd):
         print("Terminating: File not found.")
         sys.exit()
     else:
