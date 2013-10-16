@@ -14,10 +14,6 @@ and renames it when the download completes.
 
 '''
 
-file = sys.argv[1]
-soundplay = int(sys.argv[2])
-cwd = os.getcwd()
-soundfile = "/usr/share/sounds/KDE-K3B-Finish-Success.ogg"
 
 
 def file_check(file, cwd):
@@ -53,5 +49,9 @@ def monitor(file, cwd, soundfile, soundplay):
             sys.exit()
 
 if __name__ == '__main__':
+    file = sys.argv[1]
+    soundplay = int(sys.argv[2])
+    cwd = os.getcwd()
+    soundfile = "/usr/share/sounds/KDE-K3B-Finish-Success.ogg"
     initial_check(file, cwd)
     monitor(file, cwd, soundfile, soundplay)
