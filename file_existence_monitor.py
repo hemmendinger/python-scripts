@@ -34,7 +34,7 @@ def play_sound(soundfile, soundplay):
             sound = pygame.mixer.Sound(soundfile)
             sound.play()
             while pygame.mixer.get_busy():
-                sleep(1)
+                sleep(0.5)
 
 def initial_check(file, cwd):
     if file_check(file, cwd) == False:
@@ -46,7 +46,7 @@ def initial_check(file, cwd):
 def monitor(file, cwd):
     while True:
         if file_check(file, cwd):
-            sleep(5)
+            sleep(2)
         else:
             play_sound(soundfile, soundplay)
             print("Temporary download file no longer found: " + file)
