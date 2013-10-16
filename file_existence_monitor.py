@@ -1,6 +1,3 @@
-import os, sys, pygame
-from time import sleep
-
 '''
 Notify if files in a directory have changed, but only by file names.
 
@@ -9,21 +6,23 @@ python script.py FILENAME_TO_WATCH NUMBER_OF_TIMES_TO_PLAY_SOUND
 
 Use purpose:
 Want to be notified when a file finishes downloading in Chrome
-ithout specifying a file. Chrome creates a temporary download file
+without specifying a file. Chrome creates a temporary download file
 and renames it when the download completes.
 
 '''
 
+import os, sys, pygame
+from time import sleep
 
 
-def file_check(file, cwd):
-    if file in os.listdir(cwd):
+def file_check(watchfile, cwd):
+    if watchfile in os.listdir(cwd):
         return True
     else:
         return False
 
+
 def play_sound(soundfile, soundplay):
-    sound = []
     if soundplay:
         pygame.mixer.init()
         for x in range(soundplay):
@@ -32,14 +31,16 @@ def play_sound(soundfile, soundplay):
             while pygame.mixer.get_busy():
                 sleep(0.5)
 
-def initial_check(file, cwd):
-    if file_check(file, cwd) == False:
+
+def initial_check(watchfile, cwd):
+    if file_check(watchfile, cwd) == False:
         print("Terminating: File not found.")
         sys.exit()
     else:
         exists = True
 
-def monitor(file, cwd, soundfile, soundplay):
+
+def monitor(watchfile, cwd, soundfile, soundplay):
     while True:
         if file_check(file, cwd):
             sleep(2)
@@ -48,8 +49,9 @@ def monitor(file, cwd, soundfile, soundplay):
             print("File no longer found: " + file)
             sys.exit()
 
+
 if __name__ == '__main__':
-    file = sys.argv[1]
+    watchfile = sys.argv[1]
     soundplay = int(sys.argv[2])
     cwd = os.getcwd()
     soundfile = "/usr/share/sounds/KDE-K3B-Finish-Success.ogg"
