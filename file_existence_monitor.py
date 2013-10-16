@@ -49,7 +49,7 @@ def monitor(file, cwd):
             sleep(2)
         else:
             play_sound(soundfile, soundplay)
-            print("Temporary download file no longer found: " + file)
+            print("File no longer found: " + file)
             sys.exit()
 
 if __name__ == '__main__':
