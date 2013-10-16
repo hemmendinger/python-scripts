@@ -5,7 +5,7 @@ from time import sleep
 Notify if files in a directory have changed, but only by file names.
 
 Usage:
-python script.py FILENAME_TO_WATCH INTEGER
+python script.py FILENAME_TO_WATCH NUMBER_OF_TIMES_TO_PLAY_SOUND
 
 Use purpose:
 Want to be notified when a file finishes downloading in Chrome
