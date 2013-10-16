@@ -20,7 +20,7 @@ cwd = os.getcwd()
 soundfile = "/usr/share/sounds/KDE-K3B-Finish-Success.ogg"
 
 
-def file_check(file):
+def file_check(file, cwd):
     if file in os.listdir(cwd):
         return True
     else:
@@ -36,16 +36,16 @@ def play_sound(soundfile, soundplay):
             while pygame.mixer.get_busy():
                 sleep(1)
 
-def initial_check(file):
-    if file_check(file) == False:
+def initial_check(file, cwd):
+    if file_check(file, cwd) == False:
         print("Terminating: File not found.")
         sys.exit()
     else:
         exists = True
 
-def monitor(file):
+def monitor(file, cwd):
     while True:
-        if file_check(file):
+        if file_check(file, cwd):
             sleep(5)
         else:
             play_sound(soundfile, soundplay)
@@ -54,5 +54,5 @@ def monitor(file):
 
 if __name__ == '__main__':
 #    play_sound(soundfile, soundplay)
-    initial_check(file)
-    monitor(file)
+    initial_check(file, cwd)
+    monitor(file, cwd)
