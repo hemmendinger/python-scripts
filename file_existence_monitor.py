@@ -11,7 +11,9 @@ and renames it when the download completes.
 
 '''
 
-import os, sys, pygame
+import os
+import pygame
+import sys
 from time import sleep
 
 
