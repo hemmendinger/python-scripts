@@ -13,10 +13,9 @@ def purge(filename, the_string):
 
     f = open(filename, 'w')
     i = 0
-    found = ''
+    found = False
     for line in lines:
         i += 1
-        found = False
         if the_string in line.lower():
             print filename,":" ,i ,": " ,line
             found = True
