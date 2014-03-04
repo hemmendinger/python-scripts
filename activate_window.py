@@ -8,6 +8,7 @@ def get_process(name):
     return window_ids
 
 def activate_window(window_id):
+    """Iterates the identifiers, trying to activate each one"""
     for identifier in window_id:
         subprocess.call(["xdotool", "windowactivate", identifier ])
 
