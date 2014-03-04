@@ -2,7 +2,7 @@ import os
 import subprocess
 
 def get_process(process):
-    pid = subprocess.check_output(["pgrep", process])
+    pid = subprocess.check_output(["xdotool", "search", "--name", process])
     pid = pid.strip() # remove trailing linebreak
 
 
