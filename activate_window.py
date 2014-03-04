@@ -3,7 +3,7 @@ import subprocess
 
 def get_process(process):
     pid = subprocess.check_output(["xdotool", "search", "--name", process])
-    pid = pid.strip() # remove trailing linebreak
+    pid = pid.splitlines() # split str by linebreaks
 
 
 def test(process):
