@@ -7,7 +7,10 @@ Use this script to bring a window to the forefront.
 
 Example: emacs gets buried in a pile of windows, assign a shortcut that activates any visible instances of it.
 
+### file_existence_monitor.py
+
+### purge_lines.py
+
 ### replace-filename-spaces.py
 
-### file_existence_monitor.py
 
