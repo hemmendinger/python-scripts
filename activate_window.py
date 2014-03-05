@@ -1,8 +1,17 @@
-import os
+"""
+Activate the window of a program.
+
+Usage:
+    python activate_window.py NAME_OF_PROGRAM
+
+"""
+
+from sys import argv
 import subprocess
 
+
 def get_process(name):
-    """Search for the windows containing name and return list of IDs"""
+    """Search for visible windows containing name, returns list of IDs"""
     window_ids = subprocess.check_output(["xdotool", "search", "--onlyvisible", "--name", name])
     window_ids = window_ids.splitlines() # split str by linebreaks
     return window_ids
@@ -14,5 +23,5 @@ def activate_window(window_ids):
 
 
 if __name__ == '__main__':
-     get_process("emacs")
-
+    process = get_process(argv[1])
+    activate_window(process)
