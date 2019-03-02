@@ -4,6 +4,9 @@ Monitoring how much swap space is being used to avoid cache thrashing issues,
 and notifying the user when space is low.
 
 Useful for when running a system on a small drive
+
+Consider later: A long-running script that runs at startup and tracks state or use a temporary file to track,
+so as to prevent unwanted duplicate notifications.
 """
 import subprocess
 
